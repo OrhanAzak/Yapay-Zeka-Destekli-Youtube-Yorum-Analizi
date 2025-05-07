@@ -21,7 +21,7 @@ Bu proje, bir YouTube video linki üzerinden yorumları çeken ve bu yorumları 
 1.  **Depoyu Klonlayın (veya İndirin):**
     ```bash
    https://github.com/OrhanAzak/Yapay-Zeka-Destekli-Youtube-Yorum-Analizi.git
-    cd DEPO_ADINIZ
+    cd Klasör Adınız
     ```
 
 2.  **Gerekli Bağımlılıkları Yükleyin:**
