@@ -20,7 +20,7 @@ Bu proje, bir YouTube video linki üzerinden yorumları çeken ve bu yorumları 
 
 1.  **Depoyu Klonlayın (veya İndirin):**
     ```bash
-    git clone https://github.com/KULLANICI_ADINIZ/DEPO_ADINIZ.git
+    git clone https://github.com/KULLANICI_ADINIZ/DEPO_ADINIZ.git](https://github.com/OrhanAzak/Yapay-Zeka-Destekli-Youtube-Yorum-Analizi.git
     cd DEPO_ADINIZ
     ```
 
