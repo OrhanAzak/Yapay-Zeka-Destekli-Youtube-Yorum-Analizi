@@ -1,0 +1,376 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ff0000;
+}
+
+h2 {
+    margin: 1.5rem 0;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+h3 {
+    margin: 1.5rem 0 1rem;
+    color: #333;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+h4 {
+    margin: 1rem 0 0.5rem;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.input-container {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+#youtube-url {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+}
+
+#fetch-comments {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+#fetch-comments:hover {
+    background-color: #cc0000;
+}
+
+.loading-spinner {
+    display: none;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #ff0000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.comments-container {
+    margin-top: 2rem;
+}
+
+.video-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #ff0000;
+}
+
+.comments-heading {
+    font-size: 1.3rem;
+    margin: 2rem 0 1rem;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+}
+
+.comment {
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.author-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 0.75rem;
+    object-fit: cover;
+    background-color: #f0f0f0;
+}
+
+.author-name {
+    font-weight: bold;
+}
+
+.comment-date {
+    margin-left: auto;
+    color: #777;
+    font-size: 0.85rem;
+}
+
+.comment-text {
+    line-height: 1.5;
+}
+
+.likes {
+    margin-top: 0.5rem;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Analiz Bölümü Stilleri */
+.analysis-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.analysis-title {
+    color: #1a73e8;
+    border-bottom: 2px solid #1a73e8;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.analysis-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.analysis-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.analysis-section h4 {
+    color: #555;
+    margin-bottom: 0.75rem;
+}
+
+.analysis-section ul {
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.analysis-section li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.analysis-section p {
+    line-height: 1.5;
+    color: #444;
+}
+
+.summary {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+.summary p {
+    font-style: italic;
+    color: #333;
+}
+
+/* Duygu Analizi Chart */
+.mood-analysis {
+    padding-bottom: 1.5rem;
+}
+
+.mood-chart {
+    margin-top: 1rem;
+}
+
+.chart-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.chart-bars {
+    display: flex;
+    height: 35px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: width 0.5s ease-in-out;
+    min-width: 30px;
+}
+
+.bar.positive {
+    background-color: #34a853;
+}
+
+.bar.negative {
+    background-color: #ea4335;
+}
+
+.bar.neutral {
+    background-color: #fbbc05;
+}
+
+.raw-response {
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    overflow-x: auto;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 1rem;
+}
+
+/* Hata ve Bilgi Mesajları Stilleri */
+.error-box {
+    background-color: #ffebee;
+    border: 1px solid #ffcdd2;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.error {
+    color: #c62828;
+    font-weight: bold;
+}
+
+.error-help {
+    margin-top: 0.5rem;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.no-comments {
+    text-align: center;
+    color: #555;
+    padding: 1rem;
+    font-style: italic;
+}
+
+.info-message {
+    background-color: #e3f2fd;
+    color: #1565c0;
+    border-radius: 4px;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Mobil Cihazlar İçin Düzenlemeler */
+@media (max-width: 600px) {
+    .input-container {
+        flex-direction: column;
+    }
+
+    #youtube-url {
+        border-radius: 4px 4px 0 0;
+    }
+
+    #fetch-comments {
+        border-radius: 0 0 4px 4px;
+        padding: 0.75rem;
+    }
+
+    .comment-header {
+        flex-wrap: wrap;
+    }
+
+    .comment-date {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0.25rem;
+    }
+
+    .bar span {
+        font-size: 0.7rem;
+    }
+}
+
+/* Yorum sayısı istatistik kutusu stilleri */
+.stats-container {
+    margin: 1rem 0 2rem 0;
+}
+
+.stats-box {
+    display: flex;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #ff0000;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.25rem;
+}
